@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Xilinx Workstation\First_Project\Reg.ncd
+OUTFILE=D:\Xilinx Workstation\First_Project\Reg.bit
+FAMILY=Spartan6
+PART=xc6slx9-3csg324
+WORKINGDIR=D:\Xilinx Workstation\First_Project
+LICENSE=WebPack
+USER_INFO=211642490_0_0_759

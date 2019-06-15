@@ -1,0 +1,47 @@
+####################################################################################################################################################
+NET "clock" LOC = V10;
+    NET "AN2"           LOC = B3  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;               
+    NET "AN1"           LOC = B2  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "AN0"           LOC = A2  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+####################################################################################################################################################
+#                                            Expansion Connector's HEADER P6	                                                                   #
+####################################################################################################################################################
+    NET "a"     LOC =A3  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "b"     LOC = B4  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "c"     LOC = A4  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "d"     LOC = C4  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "e"     LOC = C5  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "fp"     LOC = D6  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "g"     LOC = C6  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+    NET "dp"     LOC = A5  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST ;
+	  
+NET "enabling" PULLUP;
+NET "operation_bit0" PULLUP;
+NET "operation_bit1" PULLUP;
+NET "enable" PULLUP;
+NET "SW4" PULLUP;
+NET "SW5" PULLUP;
+NET "SW6" PULLUP;
+NET "SW7" PULLUP;
+
+ NET "SW4"  LOC = F17 ;
+ NET "SW5" LOC = F18 ;
+ NET "SW6"  LOC = E16 ;
+ NET "SW7"  LOC = E18  ;
+ NET "enable"  LOC = D18 ; 
+ NET "operation_bit1"  LOC = C18; #SW2
+ NET "operation_bit0"  LOC = D17; #SW1
+ NET "enabling"  LOC = C17; #SW0  
+ 
+ NET "rezult[3]" LOC = P15  ;
+ NET "rezult[2]" LOC = P16  ;
+ NET "rezult[1]" LOC = N15; 
+ NET "rezult[0]" LOC = N16 ;
+ 
+ NET "carry" LOC = T18;
+ NET "z"     LOC = T17;
+
+ //NET "taster" PULLUP;
+ //NET "taster" LOC = M16;
+ //NET "enable" PULLUP;
+ //NET "enable" LOC = M18	;
