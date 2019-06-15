@@ -1,0 +1,1034 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: CPU.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "CPU.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "CPU"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-csg324
+
+---- Source Options
+Top Module Name                    : CPU
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\D_FF.v" into library work
+Parsing module <D_FF>.
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\selecting_display.v" into library work
+Parsing module <selecting_display>.
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\Reg.v" into library work
+Parsing module <Reg>.
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\display_7s.v" into library work
+Parsing module <display_7s>.
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\delilac_frekvencije.v" into library work
+Parsing module <delilac_frekvencije>.
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "D:\Xilinx Workstation\First_Project\CPU.v" into library work
+Parsing module <CPU>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <CPU>.
+
+Elaborating module <Reg>.
+
+Elaborating module <D_FF>.
+
+Elaborating module <ALU>.
+
+Elaborating module <display_7s>.
+WARNING:HDLCompiler:189 - "D:\Xilinx Workstation\First_Project\CPU.v" Line 56: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:\Xilinx Workstation\First_Project\CPU.v" Line 57: Size mismatch in connection of port <number>. Formal port size is 4-bit while actual signal size is 2-bit.
+
+Elaborating module <selecting_display>.
+
+Elaborating module <delilac_frekvencije>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <CPU>.
+    Related source file is "D:\Xilinx Workstation\First_Project\CPU.v".
+    Summary:
+	no macro.
+Unit <CPU> synthesized.
+
+Synthesizing Unit <Reg>.
+    Related source file is "D:\Xilinx Workstation\First_Project\Reg.v".
+    Summary:
+	no macro.
+Unit <Reg> synthesized.
+
+Synthesizing Unit <D_FF>.
+    Related source file is "D:\Xilinx Workstation\First_Project\D_FF.v".
+    Found 1-bit register for signal <q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <D_FF> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "D:\Xilinx Workstation\First_Project\ALU.v".
+    Found 1-bit register for signal <carry>.
+    Found 2-bit register for signal <operation>.
+    Found 4-bit register for signal <rezult>.
+    Found 5-bit subtractor for signal <GND_4_o_GND_4_o_sub_9_OUT> created at line 49.
+    Found 5-bit adder for signal <n0055> created at line 45.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   7 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <display_7s>.
+    Related source file is "D:\Xilinx Workstation\First_Project\display_7s.v".
+    Found 1-bit register for signal <b>.
+    Found 1-bit register for signal <c>.
+    Found 1-bit register for signal <d>.
+    Found 1-bit register for signal <e>.
+    Found 1-bit register for signal <f>.
+    Found 1-bit register for signal <g>.
+    Found 1-bit register for signal <dp>.
+    Found 1-bit register for signal <a>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred  25 Multiplexer(s).
+Unit <display_7s> synthesized.
+
+Synthesizing Unit <selecting_display>.
+    Related source file is "D:\Xilinx Workstation\First_Project\selecting_display.v".
+WARNING:Xst:2935 - Signal 'AN2', unconnected in block 'selecting_display', is tied to its initial value (1).
+    Found 1-bit register for signal <a>.
+    Found 1-bit register for signal <b>.
+    Found 1-bit register for signal <c>.
+    Found 1-bit register for signal <d>.
+    Found 1-bit register for signal <e>.
+    Found 1-bit register for signal <f>.
+    Found 1-bit register for signal <g>.
+    Found 1-bit register for signal <dp>.
+    Found 1-bit register for signal <AN0>.
+    Found 1-bit register for signal <AN1>.
+    Found 1-bit register for signal <counter>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <selecting_display> synthesized.
+
+Synthesizing Unit <delilac_frekvencije>.
+    Related source file is "D:\Xilinx Workstation\First_Project\delilac_frekvencije.v".
+    Found 1-bit register for signal <c2>.
+    Found 1-bit register for signal <c3>.
+    Found 1-bit register for signal <c4>.
+    Found 1-bit register for signal <c5>.
+    Found 1-bit register for signal <c6>.
+    Found 1-bit register for signal <c7>.
+    Found 1-bit register for signal <c8>.
+    Found 1-bit register for signal <c9>.
+    Found 1-bit register for signal <c10>.
+    Found 1-bit register for signal <c11>.
+    Found 1-bit register for signal <c12>.
+    Found 1-bit register for signal <c13>.
+    Found 1-bit register for signal <c14>.
+    Found 1-bit register for signal <c15>.
+    Found 1-bit register for signal <clk7s>.
+    Found 1-bit register for signal <c1>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <delilac_frekvencije> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 5-bit adder                                           : 1
+ 5-bit subtractor                                      : 1
+# Registers                                            : 54
+ 1-bit register                                        : 52
+ 2-bit register                                        : 1
+ 4-bit register                                        : 1
+# Multiplexers                                         : 62
+ 1-bit 2-to-1 multiplexer                              : 59
+ 4-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <counter> in Unit <selector> is equivalent to the following FF/Latch, which will be removed : <AN1> 
+WARNING:Xst:1426 - The value init of the FF/Latch dp_0 hinder the constant cleaning in the block display1.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch dp_0 hinder the constant cleaning in the block display0.
+   You should achieve better results by setting this init to 1.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 5-bit adder                                           : 1
+ 5-bit subtractor                                      : 1
+# Registers                                            : 58
+ Flip-Flops                                            : 58
+# Multiplexers                                         : 62
+ 1-bit 2-to-1 multiplexer                              : 59
+ 4-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch dp_0 hinder the constant cleaning in the block display_7s.
+   You should achieve better results by setting this init to 1.
+
+Optimizing unit <CPU> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <display_7s> ...
+
+Optimizing unit <delilac_frekvencije> ...
+
+Optimizing unit <selecting_display> ...
+WARNING:Xst:1426 - The value init of the FF/Latch display0/g_0 hinder the constant cleaning in the block CPU.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <selector/b> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display1/b_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display0/a_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display0/f_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display0/e_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display0/c_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display0/b_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <display0/d_0> has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <display1/dp_0> in Unit <CPU> is equivalent to the following 2 FFs/Latches, which will be removed : <display0/g_0> <display0/dp_0> 
+INFO:Xst:2261 - The FF/Latch <display1/a_0> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <display1/d_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <selector/d> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <selector/a> 
+Found area constraint ratio of 100 (+ 5) on block CPU, actual ratio is 1.
+INFO:Xst:2260 - The FF/Latch <selector/counter> in Unit <CPU> is equivalent to the following FF/Latch : <selector/AN1> 
+INFO:Xst:2261 - The FF/Latch <selector/counter> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <selector/AN1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 45
+ Flip-Flops                                            : 45
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : CPU.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 42
+#      GND                         : 1
+#      INV                         : 19
+#      LUT2                        : 7
+#      LUT3                        : 1
+#      LUT4                        : 2
+#      LUT5                        : 2
+#      LUT6                        : 9
+#      VCC                         : 1
+# FlipFlops/Latches                : 45
+#      FD                          : 27
+#      FDE                         : 18
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 25
+#      IBUF                        : 8
+#      OBUF                        : 17
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              44  out of  11440     0%  
+ Number of Slice LUTs:                   40  out of   5720     0%  
+    Number used as Logic:                40  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     52
+   Number with an unused Flip Flop:       8  out of     52    15%  
+   Number with an unused LUT:            12  out of     52    23%  
+   Number of fully used LUT-FF pairs:    32  out of     52    61%  
+   Number of unique control sets:        21
+
+IO Utilization: 
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of    200    13%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 22    |
+deljenje/c15_0                     | NONE(deljenje/clk7s_0) | 1     |
+deljenje/c14_0                     | NONE(deljenje/c15_0)   | 1     |
+deljenje/c13_0                     | NONE(deljenje/c14_0)   | 1     |
+deljenje/c12_0                     | NONE(deljenje/c13_0)   | 1     |
+deljenje/c11_0                     | NONE(deljenje/c12_0)   | 1     |
+deljenje/c10_0                     | NONE(deljenje/c11_0)   | 1     |
+deljenje/c9_0                      | NONE(deljenje/c10_0)   | 1     |
+deljenje/c8_0                      | NONE(deljenje/c9_0)    | 1     |
+deljenje/c7_0                      | NONE(deljenje/c8_0)    | 1     |
+deljenje/c6_0                      | NONE(deljenje/c7_0)    | 1     |
+deljenje/c5_0                      | NONE(deljenje/c6_0)    | 1     |
+deljenje/c4_0                      | NONE(deljenje/c5_0)    | 1     |
+deljenje/c3_0                      | NONE(deljenje/c4_0)    | 1     |
+deljenje/c2_0                      | NONE(deljenje/c3_0)    | 1     |
+deljenje/c1_0                      | NONE(deljenje/c2_0)    | 1     |
+deljenje/clk7s_0                   | NONE(selector/AN0)     | 8     |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.844ns (Maximum Frequency: 351.636MHz)
+   Minimum input arrival time before clock: 3.875ns
+   Maximum output required time after clock: 4.664ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 2.844ns (frequency: 351.636MHz)
+  Total number of paths / destination ports: 59 / 11
+-------------------------------------------------------------------------
+Delay:               2.844ns (Levels of Logic = 2)
+  Source:            alu/carry_0 (FF)
+  Destination:       alu/carry_0 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: alu/carry_0 to alu/carry_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.447   0.943  alu/carry_0 (alu/carry_0)
+     LUT6:I3->O            1   0.205   0.944  alu/Mmux_carry[0]_BUS_0001_MUX_9_o11_SW0 (N8)
+     LUT6:I0->O            1   0.203   0.000  alu/carry_0_rstpot1 (alu/carry_0_rstpot1)
+     FD:D                      0.102          alu/carry_0
+    ----------------------------------------
+    Total                      2.844ns (0.957ns logic, 1.887ns route)
+                                       (33.7% logic, 66.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c15_0'
+  Clock period: 2.163ns (frequency: 462.406MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.163ns (Levels of Logic = 1)
+  Source:            deljenje/clk7s_0 (FF)
+  Destination:       deljenje/clk7s_0 (FF)
+  Source Clock:      deljenje/c15_0 rising
+  Destination Clock: deljenje/c15_0 rising
+
+  Data Path: deljenje/clk7s_0 to deljenje/clk7s_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               9   0.447   0.829  deljenje/clk7s_0 (deljenje/clk7s_0)
+     INV:I->O              1   0.206   0.579  deljenje/clk7s[0]_INV_26_o1_INV_0 (deljenje/clk7s[0]_INV_26_o)
+     FD:D                      0.102          deljenje/clk7s_0
+    ----------------------------------------
+    Total                      2.163ns (0.755ns logic, 1.408ns route)
+                                       (34.9% logic, 65.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c14_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c15_0 (FF)
+  Destination:       deljenje/c15_0 (FF)
+  Source Clock:      deljenje/c14_0 rising
+  Destination Clock: deljenje/c14_0 rising
+
+  Data Path: deljenje/c15_0 to deljenje/c15_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c15_0 (deljenje/c15_0)
+     INV:I->O              1   0.206   0.579  deljenje/c15[0]_INV_25_o1_INV_0 (deljenje/c15[0]_INV_25_o)
+     FD:D                      0.102          deljenje/c15_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c13_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c14_0 (FF)
+  Destination:       deljenje/c14_0 (FF)
+  Source Clock:      deljenje/c13_0 rising
+  Destination Clock: deljenje/c13_0 rising
+
+  Data Path: deljenje/c14_0 to deljenje/c14_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c14_0 (deljenje/c14_0)
+     INV:I->O              1   0.206   0.579  deljenje/c14[0]_INV_24_o1_INV_0 (deljenje/c14[0]_INV_24_o)
+     FD:D                      0.102          deljenje/c14_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c12_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c13_0 (FF)
+  Destination:       deljenje/c13_0 (FF)
+  Source Clock:      deljenje/c12_0 rising
+  Destination Clock: deljenje/c12_0 rising
+
+  Data Path: deljenje/c13_0 to deljenje/c13_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c13_0 (deljenje/c13_0)
+     INV:I->O              1   0.206   0.579  deljenje/c13[0]_INV_23_o1_INV_0 (deljenje/c13[0]_INV_23_o)
+     FD:D                      0.102          deljenje/c13_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c11_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c12_0 (FF)
+  Destination:       deljenje/c12_0 (FF)
+  Source Clock:      deljenje/c11_0 rising
+  Destination Clock: deljenje/c11_0 rising
+
+  Data Path: deljenje/c12_0 to deljenje/c12_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c12_0 (deljenje/c12_0)
+     INV:I->O              1   0.206   0.579  deljenje/c12[0]_INV_22_o1_INV_0 (deljenje/c12[0]_INV_22_o)
+     FD:D                      0.102          deljenje/c12_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c10_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c11_0 (FF)
+  Destination:       deljenje/c11_0 (FF)
+  Source Clock:      deljenje/c10_0 rising
+  Destination Clock: deljenje/c10_0 rising
+
+  Data Path: deljenje/c11_0 to deljenje/c11_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c11_0 (deljenje/c11_0)
+     INV:I->O              1   0.206   0.579  deljenje/c11[0]_INV_21_o1_INV_0 (deljenje/c11[0]_INV_21_o)
+     FD:D                      0.102          deljenje/c11_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c9_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c10_0 (FF)
+  Destination:       deljenje/c10_0 (FF)
+  Source Clock:      deljenje/c9_0 rising
+  Destination Clock: deljenje/c9_0 rising
+
+  Data Path: deljenje/c10_0 to deljenje/c10_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c10_0 (deljenje/c10_0)
+     INV:I->O              1   0.206   0.579  deljenje/c10[0]_INV_20_o1_INV_0 (deljenje/c10[0]_INV_20_o)
+     FD:D                      0.102          deljenje/c10_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c8_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c9_0 (FF)
+  Destination:       deljenje/c9_0 (FF)
+  Source Clock:      deljenje/c8_0 rising
+  Destination Clock: deljenje/c8_0 rising
+
+  Data Path: deljenje/c9_0 to deljenje/c9_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c9_0 (deljenje/c9_0)
+     INV:I->O              1   0.206   0.579  deljenje/c9[0]_INV_19_o1_INV_0 (deljenje/c9[0]_INV_19_o)
+     FD:D                      0.102          deljenje/c9_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c7_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c8_0 (FF)
+  Destination:       deljenje/c8_0 (FF)
+  Source Clock:      deljenje/c7_0 rising
+  Destination Clock: deljenje/c7_0 rising
+
+  Data Path: deljenje/c8_0 to deljenje/c8_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c8_0 (deljenje/c8_0)
+     INV:I->O              1   0.206   0.579  deljenje/c8[0]_INV_18_o1_INV_0 (deljenje/c8[0]_INV_18_o)
+     FD:D                      0.102          deljenje/c8_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c6_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c7_0 (FF)
+  Destination:       deljenje/c7_0 (FF)
+  Source Clock:      deljenje/c6_0 rising
+  Destination Clock: deljenje/c6_0 rising
+
+  Data Path: deljenje/c7_0 to deljenje/c7_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c7_0 (deljenje/c7_0)
+     INV:I->O              1   0.206   0.579  deljenje/c7[0]_INV_17_o1_INV_0 (deljenje/c7[0]_INV_17_o)
+     FD:D                      0.102          deljenje/c7_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c5_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c6_0 (FF)
+  Destination:       deljenje/c6_0 (FF)
+  Source Clock:      deljenje/c5_0 rising
+  Destination Clock: deljenje/c5_0 rising
+
+  Data Path: deljenje/c6_0 to deljenje/c6_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c6_0 (deljenje/c6_0)
+     INV:I->O              1   0.206   0.579  deljenje/c6[0]_INV_16_o1_INV_0 (deljenje/c6[0]_INV_16_o)
+     FD:D                      0.102          deljenje/c6_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c4_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c5_0 (FF)
+  Destination:       deljenje/c5_0 (FF)
+  Source Clock:      deljenje/c4_0 rising
+  Destination Clock: deljenje/c4_0 rising
+
+  Data Path: deljenje/c5_0 to deljenje/c5_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c5_0 (deljenje/c5_0)
+     INV:I->O              1   0.206   0.579  deljenje/c5[0]_INV_15_o1_INV_0 (deljenje/c5[0]_INV_15_o)
+     FD:D                      0.102          deljenje/c5_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c3_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c4_0 (FF)
+  Destination:       deljenje/c4_0 (FF)
+  Source Clock:      deljenje/c3_0 rising
+  Destination Clock: deljenje/c3_0 rising
+
+  Data Path: deljenje/c4_0 to deljenje/c4_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c4_0 (deljenje/c4_0)
+     INV:I->O              1   0.206   0.579  deljenje/c4[0]_INV_14_o1_INV_0 (deljenje/c4[0]_INV_14_o)
+     FD:D                      0.102          deljenje/c4_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c2_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c3_0 (FF)
+  Destination:       deljenje/c3_0 (FF)
+  Source Clock:      deljenje/c2_0 rising
+  Destination Clock: deljenje/c2_0 rising
+
+  Data Path: deljenje/c3_0 to deljenje/c3_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c3_0 (deljenje/c3_0)
+     INV:I->O              1   0.206   0.579  deljenje/c3[0]_INV_13_o1_INV_0 (deljenje/c3[0]_INV_13_o)
+     FD:D                      0.102          deljenje/c3_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/c1_0'
+  Clock period: 1.950ns (frequency: 512.794MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.950ns (Levels of Logic = 1)
+  Source:            deljenje/c2_0 (FF)
+  Destination:       deljenje/c2_0 (FF)
+  Source Clock:      deljenje/c1_0 rising
+  Destination Clock: deljenje/c1_0 rising
+
+  Data Path: deljenje/c2_0 to deljenje/c2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  deljenje/c2_0 (deljenje/c2_0)
+     INV:I->O              1   0.206   0.579  deljenje/c2[0]_INV_12_o1_INV_0 (deljenje/c2[0]_INV_12_o)
+     FD:D                      0.102          deljenje/c2_0
+    ----------------------------------------
+    Total                      1.950ns (0.755ns logic, 1.195ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'deljenje/clk7s_0'
+  Clock period: 2.135ns (frequency: 468.296MHz)
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Delay:               2.135ns (Levels of Logic = 1)
+  Source:            selector/counter (FF)
+  Destination:       selector/counter (FF)
+  Source Clock:      deljenje/clk7s_0 rising
+  Destination Clock: deljenje/clk7s_0 rising
+
+  Data Path: selector/counter to selector/counter
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               8   0.447   0.802  selector/counter (selector/counter)
+     INV:I->O              1   0.206   0.579  selector/GND_6_o_GND_6_o_equal_2_o1_INV_0 (selector/AN1_rstpot)
+     FD:D                      0.102          selector/counter
+    ----------------------------------------
+    Total                      2.135ns (0.755ns logic, 1.380ns route)
+                                       (35.4% logic, 64.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 43 / 27
+-------------------------------------------------------------------------
+Offset:              3.875ns (Levels of Logic = 3)
+  Source:            operation_bit1 (PAD)
+  Destination:       alu/carry_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: operation_bit1 to alu/carry_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   1.222   1.201  operation_bit1_IBUF (operation_bit1_IBUF)
+     LUT6:I1->O            1   0.203   0.944  alu/Mmux_carry[0]_BUS_0001_MUX_9_o11_SW0 (N8)
+     LUT6:I0->O            1   0.203   0.000  alu/carry_0_rstpot1 (alu/carry_0_rstpot1)
+     FD:D                      0.102          alu/carry_0
+    ----------------------------------------
+    Total                      3.875ns (1.730ns logic, 2.145ns route)
+                                       (44.6% logic, 55.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 9 / 6
+-------------------------------------------------------------------------
+Offset:              4.664ns (Levels of Logic = 2)
+  Source:            alu/rezult_3 (FF)
+  Destination:       z (PAD)
+  Source Clock:      clock rising
+
+  Data Path: alu/rezult_3 to z
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.447   0.864  alu/rezult_3 (alu/rezult_3)
+     LUT4:I0->O            1   0.203   0.579  alu/z1 (z_OBUF)
+     OBUF:I->O                 2.571          z_OBUF (z)
+    ----------------------------------------
+    Total                      4.664ns (3.221ns logic, 1.443ns route)
+                                       (69.1% logic, 30.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'deljenje/clk7s_0'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              3.820ns (Levels of Logic = 1)
+  Source:            selector/counter (FF)
+  Destination:       AN1 (PAD)
+  Source Clock:      deljenje/clk7s_0 rising
+
+  Data Path: selector/counter to AN1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               8   0.447   0.802  selector/counter (selector/counter)
+     OBUF:I->O                 2.571          AN1_OBUF (AN1)
+    ----------------------------------------
+    Total                      3.820ns (3.018ns logic, 0.802ns route)
+                                       (79.0% logic, 21.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |    2.844|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c10_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c10_0 |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c11_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c11_0 |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c12_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c12_0 |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c13_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c13_0 |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c14_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c14_0 |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c15_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c15_0 |    2.163|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c1_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c1_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c2_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c2_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c3_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c3_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c4_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c4_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c5_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c5_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c6_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c6_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c7_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c7_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c8_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c8_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/c9_0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+deljenje/c9_0  |    1.950|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock deljenje/clk7s_0
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+clock           |    1.436|         |         |         |
+deljenje/clk7s_0|    2.135|         |         |         |
+----------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.81 secs
+ 
+--> 
+
+Total memory usage is 254336 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

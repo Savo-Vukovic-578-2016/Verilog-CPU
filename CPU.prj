@@ -1,0 +1,7 @@
+verilog work "D_FF.v"
+verilog work "selecting_display.v"
+verilog work "Reg.v"
+verilog work "display_7s.v"
+verilog work "delilac_frekvencije.v"
+verilog work "ALU.v"
+verilog work "CPU.v"

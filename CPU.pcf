@@ -1,0 +1,33 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Dec 18 01:00:34 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "e" LOCATE = SITE "C5" LEVEL 1;
+COMP "g" LOCATE = SITE "C6" LEVEL 1;
+COMP "dp" LOCATE = SITE "A5" LEVEL 1;
+COMP "fp" LOCATE = SITE "D6" LEVEL 1;
+COMP "enable" LOCATE = SITE "D18" LEVEL 1;
+COMP "z" LOCATE = SITE "T17" LEVEL 1;
+COMP "carry" LOCATE = SITE "T18" LEVEL 1;
+COMP "SW4" LOCATE = SITE "F17" LEVEL 1;
+COMP "SW5" LOCATE = SITE "F18" LEVEL 1;
+COMP "SW6" LOCATE = SITE "E16" LEVEL 1;
+COMP "SW7" LOCATE = SITE "E18" LEVEL 1;
+COMP "rezult<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "rezult<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "AN0" LOCATE = SITE "A2" LEVEL 1;
+COMP "AN1" LOCATE = SITE "B2" LEVEL 1;
+COMP "rezult<2>" LOCATE = SITE "P16" LEVEL 1;
+COMP "AN2" LOCATE = SITE "B3" LEVEL 1;
+COMP "rezult<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "clock" LOCATE = SITE "V10" LEVEL 1;
+COMP "operation_bit0" LOCATE = SITE "D17" LEVEL 1;
+COMP "operation_bit1" LOCATE = SITE "C18" LEVEL 1;
+COMP "enabling" LOCATE = SITE "C17" LEVEL 1;
+COMP "a" LOCATE = SITE "A3" LEVEL 1;
+COMP "b" LOCATE = SITE "B4" LEVEL 1;
+COMP "c" LOCATE = SITE "A4" LEVEL 1;
+COMP "d" LOCATE = SITE "C4" LEVEL 1;
+SCHEMATIC END;
+
